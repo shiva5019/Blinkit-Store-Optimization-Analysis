@@ -1,0 +1,32 @@
+Blinkit Sales - Core Power BI Measures
+
+Total Sales =
+SUM(blinkit_sales[Sales])
+
+Average Sales =
+AVERAGE(blinkit_sales[Sales])
+
+Items Sold =
+COUNTROWS(blinkit_sales)
+
+Average Rating =
+AVERAGE(blinkit_sales[Rating])
+
+Unique Items =
+DISTINCTCOUNT(blinkit_sales[Item Identifier])
+
+Unique Outlets =
+DISTINCTCOUNT(blinkit_sales[Outlet Identifier])
+
+Sales Contribution % =
+DIVIDE(
+    [Total Sales],
+    CALCULATE([Total Sales], ALL(blinkit_sales)),
+    0
+)
+
+Average Visibility =
+AVERAGE(blinkit_sales[Item Visibility])
+
+Average Item Weight =
+AVERAGE(blinkit_sales[Item Weight])
